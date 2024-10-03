@@ -13,7 +13,9 @@ on:
 jobs:
  Primeiro-fluxo:
 # este é o nome do fluxo de trabalho
-  name: Job 1 # este é o nome do fluxo de trabalho
+  name: Job1
+  needs: Terceiro-fluxo
+  # este é o nome do fluxo de trabalho
   runs-on: ubuntu-latest # para ser executado nesta máquina virtual (container linux)
   steps: # agore irei incluir os passos do script
    - name: Passo 1
@@ -25,7 +27,9 @@ jobs:
      
  Segundo-fluxo:
 # este é o nome do fluxo de trabalho
-  name: Job 2 # este é o nome do fluxo de trabalho
+  name: Job2 
+  needs: Primeiro-fluxo
+  # este é o nome do fluxo de trabalho
   runs-on: ubuntu-latest # para ser executado nesta máquina virtual (container linux)
   steps: # agore irei incluir os passos do script
    - name: Passo 4
@@ -37,7 +41,7 @@ jobs:
      
  Terceiro-fluxo:
 # este é o nome do fluxo de trabalho
-  name: Job 3 # este é o nome do fluxo de trabalho
+  name: Job3 # este é o nome do fluxo de trabalho
   runs-on: ubuntu-latest # para ser executado nesta máquina virtual (container linux)
   steps: # agore irei incluir os passos do script
    - name: Passo 7
